@@ -15,10 +15,19 @@ const users = [
 function App() {
   // 요구사항1.  filter() 매서드를 사용하여 users의 배열 중, 거주지가 '서울' 인 사람들만 seoulUsers 배열에 담아주세요.
   // 아래에 코드를 적어주세요 
-  const seoulUsers = 
+  const seoulUsers = users.filter((user) => user.거주지 === '서울');
   // 요구사항2. map() 매서드를 사용해서 seoulUsers 배열에 있는 요소들을 화면에 표시해주세요.
   // 단, 이름: 나이: 이렇게 구분하여 표시되어야합니다.
-  return <>{seoulUsers.map()}</>;
+  return (
+    <>
+      {seoulUsers.map((seoul) => (
+        <div key={seoul.id}>
+          ID: {seoul.id}, 이름: {seoul.이름}, 나이: {seoul.나이}, 거주지:{' '}
+          {seoul.거주지}
+        </div>
+      ))}
+    </>
+  );
 }
 
 export default App;
